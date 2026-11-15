@@ -1,0 +1,42 @@
+{ inputs, ... }: {
+  flake.nixosModules.sops = {
+    imports = [ inputs.sops-nix.nixosModules.sops ];
+
+    sops = {
+      defaultSopsFile = ./secrets.yaml;
+      defaultSopsFormat = "yaml";
+      age = {
+        sshKeyPaths = [
+          "/etc/ssh/ssh_host_ed25519_key"
+        ];
+        keyFile = "/var/lib/sops-nix/key.txt";
+        generateKey = true;
+      };
+
+      secrets = {
+        "passwords/pim".neededForUsers = true;
+        "passwords/root".neededForUsers = true;
+        "keys/pim-private" = {
+          path = "/home/pim/.ssh/id_ed25519";
+          owner = "pim";
+          group = "users";
+          mode = "0600";
+        };
+        "keys/pim-public" = {
+          path = "/home/pim/.ssh/id_ed25519.pub";
+          owner = "pim";
+          group = "users";
+          mode = "0600";
+        };
+      };
+    };
+
+    # Allow the users group to read the host key for Home Manager secret decryption
+    systemd.tmpfiles.rules = [
+      "z /etc/ssh/ssh_host_ed25519_key 0640 root users - -"
+      "z /preserve/etc/ssh/ssh_host_ed25519_key 0640 root users - -"
+    ];
+
+    users.groups.sops = { };
+  };
+}

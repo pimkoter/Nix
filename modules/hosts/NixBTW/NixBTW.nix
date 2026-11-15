@@ -7,6 +7,7 @@
       disko-NixBTW
       boot
       networking
+      sops
 
       # Packages
       bash
