@@ -8,6 +8,10 @@
       boot
       networking
 
+      # Packages
+      bash
+      neovim
+
       # Users
       pim
     ];

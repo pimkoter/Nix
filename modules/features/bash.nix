@@ -1,10 +1,7 @@
 { inputs, moduleWithSystem, ... }: {
   flake.nixosModules.bash = moduleWithSystem (
     { self', ... }: {
-      programs.bash = {
-        enable = true;
-        package = self'.packages.bash;
-      };
+      environment.systemPackages = [ self'.packages.bash ];
     }
   );
   perSystem =
@@ -18,7 +15,7 @@
       packages = {
         bash = inputs.wrappers.lib.wrapPackage {
           inherit pkgs;
-          package = pkgs.bashInteractive;
+          package = pkgs.bash;
           flags = {
             "--rcfile" = pkgs.writeText "bashrc" ''
               # Startup
