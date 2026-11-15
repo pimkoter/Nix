@@ -8,6 +8,7 @@
       boot
       networking
       sops
+      stylix
 
       # Packages
       bash
