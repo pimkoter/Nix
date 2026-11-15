@@ -62,10 +62,10 @@
               alias cg="cd '$(${lib.getExe pkgs.git} rev-parse --show-toplevel 2>/dev/null)'"
 
               # Eza stuff
-              alias la="${lib.getExe pkgs.eza} -lah --no-git"
-              alias ll="${lib.getExe pkgs.eza} -lh --no-user --long"
-              alias ls=${lib.getExe pkgs.eza}
-              alias tree="${lib.getExe pkgs.eza} --no-git --tree"
+              alias la="${lib.getExe self'.packages.eza} -lah --no-git"
+              alias ll="${lib.getExe self'.packages.eza} -lh --no-user"
+              alias ls=${lib.getExe self'.packages.eza}
+              alias tree="${lib.getExe self'.packages.eza} --no-git --tree"
 
               # Nix aliases
               alias nd="${lib.getExe pkgs.nix} develop --impure"
