@@ -11,6 +11,7 @@
       stylix
 
       # Packages
+      niri
       bash
       neovim
 
