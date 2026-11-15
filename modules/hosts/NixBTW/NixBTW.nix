@@ -6,6 +6,7 @@
 
       disko-NixBTW
       boot
+      networking
 
       # Users
       pim
