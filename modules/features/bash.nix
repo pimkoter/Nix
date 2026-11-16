@@ -15,7 +15,7 @@
       packages = {
         bash = inputs.wrappers.lib.wrapPackage {
           inherit pkgs;
-          package = pkgs.bash;
+          package = pkgs.bashInteractive;
           flags = {
             "--rcfile" = pkgs.writeText "bashrc" ''
               # Startup
