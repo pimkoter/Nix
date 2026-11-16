@@ -1,7 +1,12 @@
 { moduleWithSystem, ... }:
 {
   flake.nixosModules.pim = moduleWithSystem (
-    { pkgs, unfreePkgs, ... }:
+    {
+      inputs',
+      pkgs,
+      unfreePkgs,
+      ...
+    }:
     {
       users.users.pim = {
         isNormalUser = true;
@@ -19,6 +24,7 @@
           blender
           evince
           freecad
+          inputs'.helium.packages.default
           kicad
           orca-slicer
           poppler-utils
