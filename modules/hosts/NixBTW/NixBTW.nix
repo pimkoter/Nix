@@ -9,6 +9,7 @@
       networking
       sops
       stylix
+      ly
 
       # Packages
       niri
