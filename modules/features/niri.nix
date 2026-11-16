@@ -33,32 +33,32 @@
               # APPLICATIONS
               "Mod+Space" = _: {
                 props.cooldown-ms = 200;
-                content.spawn-sh = "noctalia msg panel-toggle launcher";
+                content.spawn-sh = "${lib.getExe self'.packages.noctalia} msg panel-toggle launcher";
               };
 
               "Mod+Y" = _: {
                 props.cooldown-ms = 200;
-                content.spawn-sh = "noctalia-bookmarks";
+                content.spawn-sh = "${self'.packages.noctalia-bookmarks}";
               };
 
               "Mod+R" = _: {
                 props.cooldown-ms = 200;
-                content.spawn-sh = "noctalia-repos";
+                content.spawn-sh = "${self'.packages.noctalia-repos}";
               };
 
               "Mod+W" = _: {
                 props.cooldown-ms = 200;
-                content.spawn-sh = "noctalia msg panel-toggle wallpaper";
+                content.spawn-sh = "${lib.getExe self'.packages.noctalia} msg panel-toggle wallpaper";
               };
 
               "Mod+P" = _: {
                 props.cooldown-ms = 200;
-                content.spawn-sh = "noctalia-clipboard";
+                content.spawn-sh = "${self'.packages.noctalia-clipboard}";
               };
 
               "Mod+T" = _: {
                 props.cooldown-ms = 200;
-                content.spawn = [ "kitty" ];
+                content.spawn = [ "${lib.getExe self'.packages.kitty}" ];
               };
 
               "Mod+B" = _: {
@@ -68,7 +68,7 @@
 
               "Mod+V" = _: {
                 props.cooldown-ms = 200;
-                content.spawn = [ "pavucontrol" ];
+                content.spawn = [ "${lib.getExe pkgs.pavucontrol}" ];
               };
 
               # WINDOW BASICS
