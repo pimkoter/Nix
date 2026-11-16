@@ -6,6 +6,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:denful/import-tree";
     wrappers.url = "github:nix-community/nix-wrapper-modules";
+    preservation.url = "github:nix-community/preservation";
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";

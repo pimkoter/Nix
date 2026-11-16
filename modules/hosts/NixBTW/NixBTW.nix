@@ -5,6 +5,7 @@
       { nixpkgs.hostPlatform = "x86_64-linux"; }
 
       disko-NixBTW
+      preservation
       boot
       networking
       sops
