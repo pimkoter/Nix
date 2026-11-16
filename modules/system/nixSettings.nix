@@ -1,5 +1,10 @@
 { inputs, ... }:
 {
+  flake.nixConfig.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   perSystem =
     { system, ... }:
     let
