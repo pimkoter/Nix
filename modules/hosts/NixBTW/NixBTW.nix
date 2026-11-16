@@ -10,6 +10,7 @@
       sops
       stylix
       ly
+      sysPkgs
 
       # Packages
       niri
