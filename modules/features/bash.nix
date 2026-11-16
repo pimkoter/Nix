@@ -70,8 +70,8 @@
               alias gens='sudo nixos-rebuild list-generations'
 
               # Init on startup
+              eval "$(${lib.getExe self'.packages.starship} init bash)"
               eval "$(${lib.getExe pkgs.zoxide} init bash --cmd cd)"
-              eval "$(${lib.getExe pkgs.starship} init bash)"
               eval "$(${lib.getExe self'.packages.atuin} init bash --disable-up-arrow)"
             '';
           };
