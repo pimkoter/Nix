@@ -12,6 +12,7 @@
       stylix
       ly
       sysPkgs
+      nvidia
 
       # Packages
       niri
