@@ -789,7 +789,9 @@
                         }
                         {
                           desc = "File explorer";
+                          key = "c";
                           group = "Oil";
+                          action = "Oil";
                         }
                         {
                           desc = "Git";
