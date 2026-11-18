@@ -32,7 +32,7 @@
             };
 
             ui = {
-              mouse_capture = true;
+              mouse_capture = false;
               pane_borders = "auto";
               pane_outer_borders = false;
               pane_gaps = false;
