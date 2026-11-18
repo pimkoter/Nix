@@ -10,6 +10,7 @@
   perSystem =
     {
       pkgs,
+      colorPalette,
       ...
     }:
     {
@@ -974,20 +975,31 @@
               };
             };
             theme = {
-              builtin = "Noctalia";
-              community_palette = "Oxocarbon";
-              custom_palette = "";
+              source = "custom";
+              custom_palette = "custom";
               mode = "dark";
-              pure_black_dark = false;
               shell_mode = "dark";
-              source = "wallpaper";
               sync_color_scheme = true;
-              wallpaper_scheme = "vibrant";
-              templates = {
-                builtin_ids = [ ];
-                community_ids = [ "rofi" ];
-                enable_builtin_templates = true;
-                enable_community_templates = true;
+            };
+            colors = {
+              version = 2;
+              dark = {
+                primary = "#${colorPalette.b0D}";
+                on_primary = "#${colorPalette.b00}";
+                secondary = "#${colorPalette.b0C}";
+                on_secondary = "#${colorPalette.b00}";
+                tertiary = "#${colorPalette.b0E}";
+                on_tertiary = "#${colorPalette.b00}";
+                error = "#${colorPalette.b08}";
+                on_error = "#${colorPalette.b00}";
+                surface = "#${colorPalette.b00}";
+                on_surface = "#${colorPalette.b05}";
+                surface_container = "#${colorPalette.b01}";
+                on_surface_variant = "#${colorPalette.b04}";
+                outline_variant = "#${colorPalette.b03}";
+                shadow = "#${colorPalette.b00}";
+                hover = "#${colorPalette.b02}";
+                on_hover = "#${colorPalette.b05}";
               };
             };
             wallpaper = {
