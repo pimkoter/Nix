@@ -1,17 +1,15 @@
-{ moduleWithSystem, ... }:
 {
-  flake.nixosModules.root = moduleWithSystem (
+  flake.nixosModules.root =
     {
       config,
       ...
     }:
     {
-      users.users = {
+      users = {
         mutableUsers = false;
-        root = {
+        users.root = {
           hashedPasswordFile = config.sops.secrets."passwords/root".path;
         };
       };
-    }
-  );
+    };
 }
