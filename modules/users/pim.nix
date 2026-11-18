@@ -9,9 +9,13 @@
       ...
     }:
     {
+      config,
+      ...
+    }:
+    {
       users.users.pim = {
         isNormalUser = true;
-        initialPassword = "12345";
+        hashedPasswordFile = config.sops.secrets."passwords/pim".path;
         shell = self'.packages.bash;
         extraGroups = [
           "root"
