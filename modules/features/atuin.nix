@@ -22,6 +22,8 @@
             search_mode = "fuzzy";
             show_preview = true;
             style = "compact";
+            show_whats_new = false;
+            bind_up_arrow = false;
           };
         };
       };

@@ -75,7 +75,7 @@
               # Init on startup
               eval "$(${lib.getExe self'.packages.oh-my-posh} init bash)"
               eval "$(${lib.getExe pkgs.zoxide} init bash --cmd cd)"
-              eval "$(${lib.getExe self'.packages.atuin} init bash --disable-up-arrow)"
+              eval "$(${lib.getExe self'.packages.atuin} init bash)"
             '';
           };
         };
