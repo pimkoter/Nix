@@ -23,7 +23,7 @@
             "--rcfile" = pkgs.writeText "bashrc" ''
               # Startup
               if [[ $- == *i* ]]; then
-                ${lib.getExe pkgs.fastfetch}
+                ${lib.getExe self'.packages.fastfetch}
 
                 if [[ -z "$HERDR_ENV" ]]; then
                   exec ${lib.getExe self'.packages.herdr}
@@ -41,7 +41,7 @@
               shopt -s checkjobs
 
               # Fastfetch
-              alias ff="${lib.getExe' pkgs.ncurses "clear"} && ${lib.getExe pkgs.fastfetch}"
+              alias ff="${lib.getExe' pkgs.ncurses "clear"} && ${lib.getExe self'.packages.fastfetch}"
 
               # Lazygit
               alias lg=${lib.getExe self'.packages.lazygit}

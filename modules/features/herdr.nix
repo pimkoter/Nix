@@ -7,6 +7,7 @@
   perSystem =
     {
       pkgs,
+      config,
       ...
     }:
     {
@@ -38,7 +39,7 @@
               pane_scrollbars = false;
             };
 
-            theme.name = "terminal";
+            theme.name = "${config.theme.name}";
             session.resume_agents_on_restore = true;
           };
         };

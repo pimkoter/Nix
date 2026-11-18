@@ -13,6 +13,7 @@
       lib,
       self',
       inputs',
+      colorPalette,
       ...
     }:
     {
@@ -180,7 +181,12 @@
 
               focus-ring.off = _: { };
 
-              border.width = 2;
+              border = {
+                width = 2;
+                active-color = "#${colorPalette.b0D}";
+                inactive-color = "#${colorPalette.b03}";
+                urgent-color = "#${colorPalette.b08}";
+              };
 
               struts = _: { };
             };
