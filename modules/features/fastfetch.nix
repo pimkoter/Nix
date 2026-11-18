@@ -8,7 +8,7 @@
   );
 
   perSystem =
-    { pkgs, ... }:
+    { colorPalette, pkgs, ... }:
     {
       packages.fastfetch = inputs.wrappers.wrappers.fastfetch.wrap {
         inherit pkgs;
@@ -17,7 +17,12 @@
         settings = builtins.fromJSON ''
           {
             "display": {
-              "separator": "  󰑃  "
+              "separator": "  󰑃  ",
+              "color": {
+                "keys": "#${colorPalette.b0D}",
+                "title": "#${colorPalette.b0E}",
+                "output": "#${colorPalette.b05}"
+              }
             },
             "logo": {
               "padding": {
@@ -37,11 +42,6 @@
               {
                 "key": "│ ├󱎫",
                 "type": "uptime"
-              },
-              {
-                "format": "{1} ({10} sys, {11} usr)",
-                "key": "│ ├󰏖",
-                "type": "packages"
               },
               {
                 "key": "│ ├",
