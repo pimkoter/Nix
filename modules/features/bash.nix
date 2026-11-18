@@ -44,7 +44,7 @@
               alias ff="${lib.getExe' pkgs.ncurses "clear"} && ${lib.getExe pkgs.fastfetch}"
 
               # Lazygit
-              alias lg=${lib.getExe pkgs.lazygit}
+              alias lg=${lib.getExe self'.packages.lazygit}
 
               # Replace cat with bat
               alias cat=${lib.getExe pkgs.bat}
