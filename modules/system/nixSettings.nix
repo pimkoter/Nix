@@ -9,17 +9,19 @@
   };
 
   perSystem =
-    { system, ... }:
+    { system, lib, ... }:
     let
       unFree = {
         allowUnfreePredicate =
           pkg:
-          builtins.elem (pkg.pname or "") [
+          builtins.elem (lib.getName pkg) [
             "spotify"
             "ltspice"
             "android-sdk-platform-tools"
             "steam-unwrapped"
             "cuda_cudart"
+            "nvidia-settings"
+            "nvidia-x11"
           ];
       };
     in
@@ -31,7 +33,7 @@
 
         unfreePkgs = import inputs.nixpkgs {
           inherit system;
-          config = unFree;
+          config.allowUnfreePredicate = unFree.allowUnfreePredicate;
         };
       };
     };
