@@ -57,8 +57,8 @@
           # Development
           better-adb-sync
           compose2nix
+          devenv
           just
-          rustc
           sdkmanager
           verible
 
