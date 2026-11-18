@@ -3,6 +3,7 @@
   flake.nixosModules.pim = moduleWithSystem (
     {
       inputs',
+      self',
       pkgs,
       unfreePkgs,
       ...
@@ -11,6 +12,7 @@
       users.users.pim = {
         isNormalUser = true;
         initialPassword = "12345";
+        shell = self'.packages.bash;
         extraGroups = [
           "root"
           "wheel"
