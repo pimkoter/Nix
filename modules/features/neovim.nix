@@ -7,7 +7,7 @@
     }
   );
 
-  perSystem = { pkgs, ... }: {
+  perSystem = { config, pkgs, ... }: {
     packages = {
       inherit
         (inputs.nvf.lib.neovimConfiguration {
@@ -695,6 +695,8 @@
                 # --- Theme ---
                 theme = {
                   enable = true;
+                  name = config.theme.name;
+                  style = config.theme.flavor;
                   transparent = true;
                 };
 
