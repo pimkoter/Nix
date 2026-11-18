@@ -11,6 +11,8 @@
     {
       pkgs,
       colorPalette,
+      self',
+      config,
       ...
     }:
     {
@@ -1003,7 +1005,7 @@
               };
             };
             wallpaper = {
-              directory = "/home/pim/.wallpapers";
+              directory = "${self'.packages."wallpapers-${config.theme.name}"}";
               directory_dark = "";
               directory_light = "";
               edge_smoothness = 0.30000001192092896;
