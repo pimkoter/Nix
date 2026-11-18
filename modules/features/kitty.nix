@@ -1,10 +1,7 @@
 { inputs, moduleWithSystem, ... }: {
   flake.nixosModules.kitty = moduleWithSystem (
     { self', ... }: {
-      programs.kitty = {
-        enable = true;
-        package = self'.packages.kitty;
-      };
+      environment.systemPackages = [ self'.packages.kitty ];
     }
   );
   perSystem =

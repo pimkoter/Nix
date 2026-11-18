@@ -1,10 +1,7 @@
 { inputs, moduleWithSystem, ... }: {
   flake.nixosModules.eza = moduleWithSystem (
     { self', ... }: {
-      programs.eza = {
-        enable = true;
-        package = self'.packages.eza;
-      };
+      environment.systemPackages = [ self'.packages.eza ];
     }
   );
   perSystem =

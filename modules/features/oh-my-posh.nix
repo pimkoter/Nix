@@ -1,10 +1,7 @@
 { inputs, moduleWithSystem, ... }: {
   flake.nixosModules.oh-my-posh = moduleWithSystem (
     { self', ... }: {
-      programs.oh-my-posh = {
-        enable = true;
-        package = self'.packages.oh-my-posh;
-      };
+      environment.systemPackages = [ self'.packages.oh-my-posh ];
     }
   );
 

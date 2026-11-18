@@ -3,10 +3,7 @@
   flake.nixosModules.fastfetch = moduleWithSystem (
     { self', ... }:
     {
-      programs.fastfetch = {
-        enable = true;
-        package = self'.packages.fastfetch;
-      };
+      environment.systemPackages = [ self'.packages.fastfetch ];
     }
   );
 
