@@ -8,8 +8,6 @@
   perSystem =
     {
       pkgs,
-      self',
-      lib,
       ...
     }:
     {
