@@ -22,46 +22,20 @@
             "version": 3,
 
             "palette": {
-               "background": "#${colorPalette.b00}",
-               "base": "#${colorPalette.b00}",
-
-               "blue": "#${colorPalette.b0D}",
-               "comment": "#${colorPalette.b03}",
-               "crust": "#${colorPalette.b00}",
-               "current_line": "#${colorPalette.b02}",
-
-               "cyan": "#${colorPalette.b0C}",
-               "red": "#${colorPalette.b08}",
-
-               "foreground": "#${colorPalette.b05}",
-               "green": "#${colorPalette.b0B}",
-               "grey": "#${colorPalette.b04}",
-
-               "mantle": "#${colorPalette.b01}",
-               "purple": "#${colorPalette.b0E}",
-
-               "none": "#${colorPalette.b05}",
-               "orange": "#${colorPalette.b09}",
-
-               "overlay0": "#${colorPalette.b03}",
-               "overlay1": "#${colorPalette.b04}",
-               "overlay2": "#${colorPalette.b05}",
-
-               "peach": "#${colorPalette.b09}",
-               "pink": "#${colorPalette.b0E}",
-
-               "rosewater": "#${colorPalette.b06}",
-
-               "subtext0": "#${colorPalette.b04}",
-               "subtext1": "#${colorPalette.b05}",
-
-               "surface0": "#${colorPalette.b01}",
-               "surface1": "#${colorPalette.b02}",
-               "surface2": "#${colorPalette.b03}",
-
-               "text": "#${colorPalette.b05}",
-               "white": "#${colorPalette.b07}",
-               "yellow": "#${colorPalette.b0A}"
+              "background": "#${colorPalette.b00}",
+              "blue": "#${colorPalette.b0D}",
+              "cyan": "#${colorPalette.b0C}",
+              "foreground": "#${colorPalette.b05}",
+              "green": "#${colorPalette.b0B}",
+              "grey": "#${colorPalette.b04}",
+              "mantle": "#${colorPalette.b01}",
+              "orange": "#${colorPalette.b09}",
+              "overlay0": "#${colorPalette.b03}",
+              "purple": "#${colorPalette.b0E}",
+              "rosewater": "#${colorPalette.b06}",
+              "surface1": "#${colorPalette.b02}",
+              "white": "#${colorPalette.b07}",
+              "yellow": "#${colorPalette.b0A}"
             },
 
             "blocks": [
@@ -73,13 +47,13 @@
                     "type": "session",
                     "style": "plain",
                     "template": "{{ if .SSHSession }}{{ .UserName }}@{{ .HostName }} -- {{ end }}",
-                    "foreground": "p:overlay2"
+                    "foreground": "p:overlay0"
                   },
                   {
                     "type": "path",
                     "style": "plain",
                     "template": "{{ .Path }} ",
-                    "foreground": "p:text",
+                    "foreground": "p:foreground",
                     "properties": {
                       "style": "full"
                     }
@@ -107,7 +81,7 @@
                     "type": "aws",
                     "style": "plain",
                     "template": " aws {{ .Profile }}",
-                    "foreground": "p:peach"
+                    "foreground": "p:orange"
                   },
                   {
                     "type": "gcp",
@@ -131,7 +105,7 @@
                     "type": "package",
                     "style": "plain",
                     "template": " package {{ .Full }}",
-                    "foreground": "p:pink"
+                    "foreground": "p:purple"
                   },
                   {
                     "type": "python",
@@ -143,13 +117,13 @@
                     "type": "rust",
                     "style": "plain",
                     "template": " rs {{ .Full }}",
-                    "foreground": "p:peach"
+                    "foreground": "p:orange"
                   },
                   {
                     "type": "terraform",
                     "style": "plain",
-                    "template": " tf {{ .WorkspaceName }}",
-                    "foreground": "p:blue"
+                    "foreground": "p:blue",
+                    "template": " tf {{ .WorkspaceName }}"
                   },
                   {
                     "type": "nix-shell",
@@ -161,11 +135,10 @@
                     "type": "time",
                     "style": "plain",
                     "template": " ── {{ .CurrentDate | date \"2006-01-02\" }} ── {{ .CurrentDate | date \"15:04:05\" }}",
-                    "foreground": "p:overlay1"
+                    "foreground": "p:grey"
                   }
                 ]
               },
-
               {
                 "type": "prompt",
                 "alignment": "left",
