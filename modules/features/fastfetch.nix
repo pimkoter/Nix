@@ -97,13 +97,15 @@
               showIpv6 = false;
               type = "localip";
             }
-                "showIpv6": false,
-                "type": "localip"
-              }
-            ],
-            "schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json"
-          }
-        '';
+            "break"
+            "break"
+            {
+              type = "colors";
+              block = {
+                width = 3;
+                height = 1;
+              };
+            }
           ];
 
           schema = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
