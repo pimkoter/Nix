@@ -8,6 +8,7 @@
   perSystem =
     {
       pkgs,
+      colorPalette,
       ...
     }:
     {
@@ -21,42 +22,46 @@
             "version": 3,
 
             "palette": {
-              "background": "#1e1e2e",
-              "base": "#1e1e2e",
-              "blue": "#89b4fa",
-              "comment": "#6c7086",
-              "crust": "#11111b",
-              "current_line": "#313244",
-              "cyan": "#89dceb",
-              "flamingo": "#f2cdcd",
-              "foreground": "#cdd6f4",
-              "green": "#a6e3a1",
-              "grey": "#7f849c",
-              "lavender": "#b4befe",
-              "mantle": "#181825",
-              "maroon": "#eba0ac",
-              "mauve": "#cba6f7",
-              "none": "#cdd6f4",
-              "orange": "#fab387",
-              "overlay0": "#6c7086",
-              "overlay1": "#7f849c",
-              "overlay2": "#9399b2",
-              "peach": "#fab387",
-              "pink": "#f5c2e7",
-              "purple": "#cba6f7",
-              "red": "#f38ba8",
-              "rosewater": "#f5e0dc",
-              "sapphire": "#74c7ec",
-              "sky": "#89dceb",
-              "subtext0": "#a6adc8",
-              "subtext1": "#bac2de",
-              "surface0": "#313244",
-              "surface1": "#45475a",
-              "surface2": "#585b70",
-              "teal": "#94e2d5",
-              "text": "#cdd6f4",
-              "white": "#cdd6f4",
-              "yellow": "#f9e2af"
+               "background": "#${colorPalette.b00}",
+               "base": "#${colorPalette.b00}",
+
+               "blue": "#${colorPalette.b0D}",
+               "comment": "#${colorPalette.b03}",
+               "crust": "#${colorPalette.b00}",
+               "current_line": "#${colorPalette.b02}",
+
+               "cyan": "#${colorPalette.b0C}",
+               "red": "#${colorPalette.b08}",
+
+               "foreground": "#${colorPalette.b05}",
+               "green": "#${colorPalette.b0B}",
+               "grey": "#${colorPalette.b04}",
+
+               "mantle": "#${colorPalette.b01}",
+               "purple": "#${colorPalette.b0E}",
+
+               "none": "#${colorPalette.b05}",
+               "orange": "#${colorPalette.b09}",
+
+               "overlay0": "#${colorPalette.b03}",
+               "overlay1": "#${colorPalette.b04}",
+               "overlay2": "#${colorPalette.b05}",
+
+               "peach": "#${colorPalette.b09}",
+               "pink": "#${colorPalette.b0E}",
+
+               "rosewater": "#${colorPalette.b06}",
+
+               "subtext0": "#${colorPalette.b04}",
+               "subtext1": "#${colorPalette.b05}",
+
+               "surface0": "#${colorPalette.b01}",
+               "surface1": "#${colorPalette.b02}",
+               "surface2": "#${colorPalette.b03}",
+
+               "text": "#${colorPalette.b05}",
+               "white": "#${colorPalette.b07}",
+               "yellow": "#${colorPalette.b0A}"
             },
 
             "blocks": [
@@ -90,7 +95,7 @@
                   {
                     "type": "git",
                     "style": "plain",
-                    "foreground": "p:lavender",
+                    "foreground": "p:blue",
                     "template": " {{ .HEAD }}{{ if gt .Working.Modified 0 }}  {{ .Working.Modified }}{{ end }}{{ if gt .Staging.Modified 0 }}  {{ .Staging.Modified }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
                     "options": {
                       "fetch_status": true,
@@ -114,7 +119,7 @@
                     "type": "go",
                     "style": "plain",
                     "template": " go {{ .Full }}",
-                    "foreground": "p:sky"
+                    "foreground": "p:cyan"
                   },
                   {
                     "type": "node",
@@ -144,7 +149,7 @@
                     "type": "terraform",
                     "style": "plain",
                     "template": " tf {{ .WorkspaceName }}",
-                    "foreground": "p:lavender"
+                    "foreground": "p:blue"
                   },
                   {
                     "type": "nix-shell",
