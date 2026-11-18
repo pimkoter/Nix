@@ -705,7 +705,7 @@
               ];
             };
             shell = {
-              app_icon_colorize = true;
+              colorize_icons = true;
               avatar_path = "";
               button_borders = true;
               card_borders = true;
