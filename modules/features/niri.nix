@@ -12,6 +12,7 @@
       pkgs,
       lib,
       self',
+      inputs',
       ...
     }:
     {
@@ -63,7 +64,7 @@
 
               "Mod+B" = _: {
                 props.cooldown-ms = 200;
-                content.spawn = [ "librewolf" ];
+                content.spawn = [ "${lib.getExe inputs'.helium.packages.default}" ];
               };
 
               "Mod+V" = _: {
