@@ -26,7 +26,7 @@
                 ${lib.getExe pkgs.fastfetch}
 
                 if [[ -z "$HERDR_ENV" ]]; then
-                  exec ${lib.getExe pkgs.herdr}
+                  exec ${lib.getExe self'.packages.herdr}
                 fi
               fi
 
