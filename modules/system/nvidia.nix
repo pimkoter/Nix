@@ -1,31 +1,35 @@
+{ moduleWithSystem, ... }:
 {
-  flake.nixosModules.nvidia = {
-    boot.blacklistedKernelModules = [ "nouveau" ];
-    services.xserver.videoDrivers = [ "nvidia" ];
-    hardware = {
-      nvidia = {
-        modesetting.enable = true;
-        open = true;
-        nvidiaSettings = true;
-        powerManagement = {
-          enable = true;
-          finegrained = false;
-        };
-        prime = {
-          offload = {
+  flake.nixosModules.nvidia = moduleWithSystem (
+    { unfreePkgs, ... }: {
+      boot.blacklistedKernelModules = [ "nouveau" ];
+      services.xserver.videoDrivers = [ "nvidia" ];
+      hardware = {
+        nvidia = {
+          package = unfreePkgs.linuxPackages_zen.nvidiaPackages.stable;
+          modesetting.enable = true;
+          open = true;
+          nvidiaSettings = true;
+          powerManagement = {
             enable = true;
-            enableOffloadCmd = true;
+            finegrained = false;
           };
-          intelBusId = "PCI:0:2:0";
-          nvidiaBusId = "PCI:2:0:0";
+          prime = {
+            offload = {
+              enable = true;
+              enableOffloadCmd = true;
+            };
+            intelBusId = "PCI:0:2:0";
+            nvidiaBusId = "PCI:2:0:0";
+          };
         };
-      };
 
-      graphics = {
-        enable = true;
-        enable32Bit = true;
+        graphics = {
+          enable = true;
+          enable32Bit = true;
+        };
+        enableRedistributableFirmware = true;
       };
-      enableRedistributableFirmware = true;
-    };
-  };
+    }
+  );
 }

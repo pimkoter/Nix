@@ -7,7 +7,7 @@
     {
       systemd.services.NetworkManager-wait-online.enable = false;
       boot = {
-        kernelPackages = pkgs.linuxPackages_latest;
+        kernelPackages = pkgs.linuxPackages_zen;
         kernel.sysctl = {
           "vm.max_map_count" = 2147483642;
         };
