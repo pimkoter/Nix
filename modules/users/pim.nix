@@ -43,7 +43,6 @@
           fd
           ffmpeg
           fzf
-          git
           jq
           lazygit
           ripgrep
@@ -77,6 +76,7 @@
           unfreePkgs.ltspice
           unfreePkgs.steam-run
           unfreePkgs.android-tools
+          self'.packages.git
         ];
     }
   );
