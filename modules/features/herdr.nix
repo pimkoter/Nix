@@ -18,7 +18,6 @@
           settings = {
             onboarding = false;
             terminal = {
-              default_shell = "${pkgs.bash}/bin/bash";
               new_cwd = "follow";
             };
             keys = {
