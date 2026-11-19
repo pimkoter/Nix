@@ -38,13 +38,11 @@
           thunderbird
 
           # CLI utilities
-          bat
           bottom
           fd
           ffmpeg
           fzf
           jq
-          lazygit
           ripgrep
           sops
           tesseract
