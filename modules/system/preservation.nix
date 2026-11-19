@@ -32,6 +32,12 @@
             directory = "/var/lib/nixos";
             inInitrd = true;
           }
+          {
+            directory = "/var/lib/ollama-models/";
+            user = "ollama";
+            group = "ollama";
+            mode = "0750";
+          }
           "/var/lib/systemd/timers"
           "/var/lib/bluetooth"
           "/var/log"
