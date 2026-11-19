@@ -34,6 +34,7 @@
       services
       sops
       herdr
+      ollama
 
       # Shell and terminal
       bash

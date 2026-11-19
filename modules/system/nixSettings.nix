@@ -44,6 +44,14 @@
             "ltspice"
             "android-sdk-platform-tools"
             "steam-unwrapped"
+            "libnvvm"
+            "open-webui"
+            "cuda_cccl"
+            "cuda_nvrtc"
+            "cccl"
+            "libcublas"
+            "cuda_crt"
+            "cuda_nvcc"
             "cuda_cudart"
             "nvidia-settings"
             "nvidia-x11"
@@ -57,6 +65,11 @@
         };
 
         unfreePkgs = import inputs.nixpkgs {
+          inherit system;
+          config.allowUnfreePredicate = unFree.allowUnfreePredicate;
+        };
+
+        stableUnfreePkgs = import inputs.nixpkgsStable {
           inherit system;
           config.allowUnfreePredicate = unFree.allowUnfreePredicate;
         };
