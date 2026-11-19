@@ -978,31 +978,9 @@
             };
             theme = {
               source = "custom";
-              custom_palette = "custom";
               mode = "dark";
-              shell_mode = "dark";
+              shell_mode = "follow";
               sync_color_scheme = true;
-            };
-            colors = {
-              version = 2;
-              dark = {
-                primary = "${colorPalette.b0D}";
-                on_primary = "${colorPalette.b00}";
-                secondary = "${colorPalette.b0C}";
-                on_secondary = "${colorPalette.b00}";
-                tertiary = "${colorPalette.b0E}";
-                on_tertiary = "${colorPalette.b00}";
-                error = "${colorPalette.b08}";
-                on_error = "${colorPalette.b00}";
-                surface = "${colorPalette.b00}";
-                on_surface = "${colorPalette.b05}";
-                surface_container = "${colorPalette.b01}";
-                on_surface_variant = "${colorPalette.b04}";
-                outline_variant = "${colorPalette.b03}";
-                shadow = "${colorPalette.b00}";
-                hover = "${colorPalette.b02}";
-                on_hover = "${colorPalette.b05}";
-              };
             };
             wallpaper = {
               directory = "${self'.packages."wallpapers-${config.theme.name}"}";
@@ -1119,6 +1097,24 @@
                 type = "sysmon";
               };
             };
+          };
+          colors = {
+            primary = colorPalette.b0D;
+            on_primary = colorPalette.b00;
+            secondary = colorPalette.b0E;
+            on_secondary = colorPalette.b00;
+            tertiary = colorPalette.b0C;
+            on_tertiary = colorPalette.b00;
+            error = colorPalette.b08;
+            on_error = colorPalette.b00;
+            surface = colorPalette.b00;
+            on_surface = colorPalette.b05;
+            surface_variant = colorPalette.b02;
+            on_surface_variant = colorPalette.b04;
+            background = colorPalette.b01;
+            on_background = colorPalette.b05;
+            outline = colorPalette.b04;
+            shadow = colorPalette.b01;
           };
         };
       };
