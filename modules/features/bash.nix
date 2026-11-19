@@ -68,9 +68,14 @@
               alias tree="${lib.getExe self'.packages.eza} --no-git --tree"
 
               # Nix aliases
-              alias nd="${lib.getExe pkgs.nix} develop --impure"
-              alias nr="${lib.getExe pkgs.nix} run nixpkgs#"
+              alias nd="${lib.getExe pkgs.nix} develop"
+              alias nfc="${lib.getExe pkgs.nix} flake check"
               alias gens='sudo nixos-rebuild list-generations'
+              nr() {
+                local package="$1"
+                shift
+                ${lib.getExe pkgs.nix} run "nixpkgs#$package" -- "$@"
+              }
 
               # Init on startup
               eval "$(${lib.getExe self'.packages.oh-my-posh} init bash)"
