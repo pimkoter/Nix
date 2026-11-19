@@ -26,7 +26,6 @@
               new_tab = "prefix+c";
               split_vertical = "prefix+v";
               split_horizontal = [
-                "prefix+minus"
                 "prefix+s"
               ];
               focus_pane_left = [
@@ -62,16 +61,6 @@
               pane_scrollbars = false;
               hide_tab_bar_when_single_tab = false;
               tab_bar_position = "top";
-              tab_bar_right = [
-                {
-                  type = "command";
-                  command = ''
-                    basename "$(dirname "$HERDR_ACTIVE_PANE_CWD")"
-                  '';
-                  interval_seconds = 2;
-                  timeout_seconds = 1;
-                }
-              ];
               tab_bar_right_separator = " ";
               window_title = "{workspace}: {tab}";
             };
