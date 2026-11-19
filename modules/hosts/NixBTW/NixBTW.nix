@@ -14,6 +14,7 @@
 
       # Hardware
       nvidia
+      kanata-hrm
 
       # Networking
       networking
