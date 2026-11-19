@@ -2,7 +2,11 @@
   flake.nixosConfigurations.NixBTW = inputs.nixpkgs.lib.nixosSystem {
     modules = with self.nixosModules; [
       # System configuration
-      { nixpkgs.hostPlatform = "x86_64-linux"; }
+      {
+        nixpkgs.hostPlatform = "x86_64-linux";
+        networking.hostName = "NixBTW";
+      }
+
       nixSettings
       sysSettings
       sysPkgs
