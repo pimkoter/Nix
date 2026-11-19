@@ -183,9 +183,9 @@
 
               border = {
                 width = 2;
-                active-color = "#${colorPalette.b0D}";
-                inactive-color = "#${colorPalette.b03}";
-                urgent-color = "#${colorPalette.b08}";
+                active-color = "${colorPalette.b0D}";
+                inactive-color = "${colorPalette.b03}";
+                urgent-color = "${colorPalette.b08}";
               };
 
               struts = _: { };

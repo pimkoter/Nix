@@ -22,20 +22,20 @@
             "version": 3,
 
             "palette": {
-              "background": "#${colorPalette.b00}",
-              "blue": "#${colorPalette.b0D}",
-              "cyan": "#${colorPalette.b0C}",
-              "foreground": "#${colorPalette.b05}",
-              "green": "#${colorPalette.b0B}",
-              "grey": "#${colorPalette.b04}",
-              "mantle": "#${colorPalette.b01}",
-              "orange": "#${colorPalette.b09}",
-              "overlay0": "#${colorPalette.b03}",
-              "purple": "#${colorPalette.b0E}",
-              "rosewater": "#${colorPalette.b06}",
-              "surface1": "#${colorPalette.b02}",
-              "white": "#${colorPalette.b07}",
-              "yellow": "#${colorPalette.b0A}"
+              "background": "${colorPalette.b00}",
+              "blue": "${colorPalette.b0D}",
+              "cyan": "${colorPalette.b0C}",
+              "foreground": "${colorPalette.b05}",
+              "green": "${colorPalette.b0B}",
+              "grey": "${colorPalette.b04}",
+              "mantle": "${colorPalette.b01}",
+              "orange": "${colorPalette.b09}",
+              "overlay0": "${colorPalette.b03}",
+              "purple": "${colorPalette.b0E}",
+              "rosewater": "${colorPalette.b06}",
+              "surface1": "${colorPalette.b02}",
+              "white": "${colorPalette.b07}",
+              "yellow": "${colorPalette.b0A}"
             },
 
             "blocks": [

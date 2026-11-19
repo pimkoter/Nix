@@ -18,9 +18,9 @@
           display = {
             separator = "  󰑃  ";
             color = {
-              keys = "#${colorPalette.b0D}";
-              title = "#${colorPalette.b0E}";
-              output = "#${colorPalette.b05}";
+              keys = "${colorPalette.b0D}";
+              title = "${colorPalette.b0E}";
+              output = "${colorPalette.b05}";
             };
           };
 
