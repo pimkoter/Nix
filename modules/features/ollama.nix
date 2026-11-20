@@ -23,7 +23,6 @@
           package = stableUnfreePkgs.ollama-cuda;
           loadModels = [
             "ornith-1.5:35b"
-            "mimo-v2.6"
           ];
           environmentVariables = {
             OLLAMA_CONTEXT_LENGTH = "65536";
