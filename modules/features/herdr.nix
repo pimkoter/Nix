@@ -16,7 +16,6 @@
           inherit pkgs;
           package = pkgs.herdr;
           settings = {
-            onboarding = false;
             terminal = {
               new_cwd = "follow";
             };
