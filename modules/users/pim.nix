@@ -29,7 +29,6 @@
           # Browsers / Desktop applications
           blender
           evince
-          freecad
           inputs'.helium.packages.default
           kicad
           orca-slicer
@@ -75,6 +74,7 @@
           unfreePkgs.steam-run
           unfreePkgs.android-tools
           self'.packages.git
+          self'.packages.freecad
         ];
     }
   );
