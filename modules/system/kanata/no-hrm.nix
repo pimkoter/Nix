@@ -30,15 +30,9 @@
           flags = {
             "-c" = pkgs.writeText "kanata.kbd" ''
               (defcfg
-                #
-                #
-                # TODO:
-                # edit linux-dev-names-include to exclude for custom Keyboard
-                #
-                #
-                linux-dev-names-include
+                linux-dev-names-exclude
                 (
-                  "AT Translated Set 2 keyboard"
+                  "FunkeeB_Temper Keyboard"
                 )
               )
 
