@@ -4,7 +4,6 @@
     {
       stableUnfreePkgs,
       pkgs,
-      lib,
       ...
     }:
     { lib, ... }:
