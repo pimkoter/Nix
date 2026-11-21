@@ -1,0 +1,72 @@
+name: Update Nix Flake
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nix-flake-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    name: Update and verify Nix
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update flake inputs
+        run: nix flake update
+
+      - name: Evaluate NixOS configurations
+        run: |
+          set -euo pipefail
+          machines=$(nix eval --json \
+            .#nixosConfigurations \
+            --apply 'builtins.attrNames')
+
+          if [ "$(echo "$machines" | jq 'length')" -eq 0 ]; then
+            echo "No NixOS configurations found!"
+            exit 1
+          fi
+
+      - name: Build all NixOS machines
+        run: |
+          set -euo pipefail
+          machines=$(nix eval --json \
+            .#nixosConfigurations \
+            --apply 'builtins.attrNames')
+
+          while IFS= read -r machine; do
+            echo "Building $machine..."
+            nix build --no-link --print-build-logs \
+              ".#nixosConfigurations.\"${machine}\".config.system.build.toplevel"
+          done < <(echo "$machines" | jq -r '.[]')
+
+      - name: Commit and push updates
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- flake.lock; then
+            echo "No flake updates available."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add flake.lock
+          git commit -m "chore(nix): update flake inputs"
+          git push origin HEAD:master
