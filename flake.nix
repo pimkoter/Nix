@@ -40,6 +40,15 @@
       url = "github:AlvaroParker/helium-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Personal config
+    neovim = {
+      url = "github:pimkoter/neopim";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        nvf.follows = "nvf";
+      };
+    };
   };
 
   outputs =
