@@ -31,6 +31,7 @@
       kitty
 
       # System services and security
+      pi
       services
       sops
       herdr

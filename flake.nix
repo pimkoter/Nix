@@ -7,6 +7,10 @@
     import-tree.url = "github:denful/import-tree";
     wrappers.url = "github:pimkoter/nix-wrapper-modules";
     preservation.url = "github:nix-community/preservation";
+    pi = {
+      url = "github:earendil-works/pi/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";

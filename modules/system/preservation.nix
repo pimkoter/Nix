@@ -56,6 +56,7 @@
               "Virtualmachines"
               ".thunderbird"
               ".steam"
+              ".pi"
               ".config/spotify"
               ".config/heroic"
               ".config/sops"
