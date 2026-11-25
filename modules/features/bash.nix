@@ -1,9 +1,14 @@
 { inputs, moduleWithSystem, ... }: {
   flake.nixosModules.bash = moduleWithSystem (
     { self', ... }: {
-      environment = {
-        systemPackages = [ self'.packages.bash ];
-      };
+      nixpkgs.overlays = [
+        (_: _: {
+          bashInteractive = self'.packages.bash;
+        })
+      ];
+
+      environment.shells = [ self'.packages.bash ];
+      users.defaultUserShell = self'.packages.bash;
     }
   );
   perSystem =
