@@ -1,5 +1,7 @@
+{ self, ... }:
 {
   flake.nixosModules.networking = {
+    imports = with self.nixosModules; [ wifi-eduroam ];
     networking = {
       networkmanager = {
         enable = true;
