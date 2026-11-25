@@ -362,11 +362,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795554508,
-        "narHash": "sha256-USh9qwFkdXy6eFuE8zJb2M6n/r6eqOksmXroWNT4F0Q=",
+        "lastModified": 1795620937,
+        "narHash": "sha256-l4+NJvY2EbqJh9s1sBxXBs2pA3ugQzeVpCtNzr5qjn0=",
         "owner": "pimkoter",
         "repo": "neopim",
-        "rev": "a3d69673d1647e7957d605a770f401a11a6078e6",
+        "rev": "13a188dd15e37faa7f04160eafd8290ced4d988a",
         "type": "github"
       },
       "original": {
