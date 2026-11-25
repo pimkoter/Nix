@@ -1,19 +1,9 @@
 { inputs, moduleWithSystem, ... }: {
   flake.nixosModules.kanata-hrm = moduleWithSystem (
     { self', ... }: {
-      environment = {
-        systemPackages = [ self'.packages.kanata-hrm ];
-      };
-
-      systemd.user.services.kanata-hrm = {
-        description = "Kanata with home-row mods";
-
-        wantedBy = [ "default.target" ];
-
-        serviceConfig = {
-          ExecStart = "${self'.packages.kanata-hrm}/bin/kanata";
-          Restart = "on-failure";
-        };
+      services.kanata = {
+        enable = true;
+        package = self'.packages.kanata-hrm;
       };
     }
   );
