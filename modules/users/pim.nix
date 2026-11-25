@@ -31,6 +31,7 @@
           evince
           inputs'.helium.packages.default
           kicad
+          libreoffice
           orca-slicer
           poppler-utils
           qbittorrent
