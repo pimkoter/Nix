@@ -19,6 +19,7 @@
       # Hardware
       nvidia
       kanata-hrm
+      kanshi
 
       # Networking
       networking
