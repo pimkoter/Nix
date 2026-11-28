@@ -16,7 +16,7 @@
   perSystem = { inputs', pkgs, ... }: {
     packages.pi = inputs.wrappers.lib.wrapPackage {
       inherit pkgs;
-      package = inputs'.pi.packages.pi;
+      package = inputs'.pi.packages.pi.override { nodejs_22 = pkgs.nodejs; };
       env = {
         PI_TELEMETRY = "false";
         PI_CODING_AGENT_DIR = "/home/pim/.pi/pi/agent";
