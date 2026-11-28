@@ -27,7 +27,7 @@
           flags = {
             "--rcfile" = pkgs.writeText "bashrc" ''
               # Startup
-              if [[ $- == *i* ]]; then
+              if [[ $- == *i* && -z "$DEVENV_CMDLINE" ]]; then
                 ${lib.getExe self'.packages.fastfetch}
 
                 if [[ -z "$HERDR_ENV" ]]; then
@@ -38,7 +38,7 @@
               HISTFILESIZE=100000
               HISTSIZE=10000
 
-              PROMPT_COMMAND="history -a; history -n"
+              PROMPT_COMMAND="history -a; history -n''${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
 
               shopt -s histappend
               shopt -s extglob
@@ -86,7 +86,24 @@
               eval "$(${lib.getExe self'.packages.oh-my-posh} init bash)"
               eval "$(${lib.getExe pkgs.zoxide} init bash --cmd cd)"
               eval "$(${lib.getExe self'.packages.atuin} init bash)"
+
+              # Devenv
+              _my_rcfile=''${BASH_SOURCE[0]}
+              devenv() {
+                if [[ "$*" == shell ]]; then
+                  command env _MY_RC="$_my_rcfile" PROMPT_COMMAND='[[ -z $_MY_RC ]] || . "$_MY_RC"' ${lib.getExe pkgs.devenv} shell
+                else
+                  command ${lib.getExe pkgs.devenv} "$@"
+                fi
+              }
+
               eval "$(${lib.getExe pkgs.devenv} hook bash)"
+
+              if [[ -n "$_MY_RC" ]]; then
+                unset _MY_RC
+                export -n PROMPT_COMMAND
+                for _cmd in "''${PROMPT_COMMAND[@]}"; do eval "$_cmd"; done
+              fi
             '';
           };
         };
