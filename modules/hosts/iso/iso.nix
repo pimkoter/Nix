@@ -2,7 +2,7 @@
 {
   flake.nixosConfigurations.iso = inputs.nixpkgs.lib.nixosSystem {
     modules = [
-      ({ pkgs, modulesPath, ... }: {
+      ({ modulesPath, ... }: {
         imports = [
           "${modulesPath}/installer/cd-dvd/installation-cd-base.nix"
           self.nixosModules.bash
