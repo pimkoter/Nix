@@ -18,6 +18,7 @@
           inherit pkgs;
           package = pkgs.kanata;
           flags = {
+            "-n" = null;
             "-c" = pkgs.writeText "kanata.kbd" ''
               (defcfg
                 linux-dev-names-include
