@@ -40,12 +40,12 @@
 
               "Mod+Y" = _: {
                 props.cooldown-ms = 200;
-                content.spawn-sh = "${self'.packages.noctalia-bookmarks}";
+                content.spawn-sh = "${lib.getExe self'.packages.noctalia-bookmarks}";
               };
 
               "Mod+R" = _: {
                 props.cooldown-ms = 200;
-                content.spawn-sh = "${self'.packages.noctalia-repos}";
+                content.spawn-sh = "${lib.getExe self'.packages.noctalia-repos}";
               };
 
               "Mod+W" = _: {
@@ -55,7 +55,7 @@
 
               "Mod+P" = _: {
                 props.cooldown-ms = 200;
-                content.spawn-sh = "${self'.packages.noctalia-clipboard}";
+                content.spawn-sh = "${lib.getExe self'.packages.noctalia-clipboard}";
               };
 
               "Mod+T" = _: {
